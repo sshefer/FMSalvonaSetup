@@ -5,87 +5,88 @@ https://raw.githack.com/sshefer/FMSalvonaSetup/master/forms/item_master2.html
 
 PRODUCTION:
 https://rawcdn.githack.com/sshefer/FMSalvonaSetup/7afc54fc09596ed45aeac0f5c0ac5f4f9d25cd0b/forms/item_master2.html
+
+NOTES:
+FileMaker variables are added starting with @@
 -->
 
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>html { font-size: 14px; font-family: Helvetica, sans-serif; }</style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.common-bootstrap.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.bootstrap.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default.mobile.min.css" />
-    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
-</head>
-<body>
-
-<h4>Hello!</h4>
-
-<div class="summary-container"></div>
-
-<form id="form"></form>
-
-<script>
-  $(document).ready(function () {
-    $("#form").kendoForm({
-			validatable: {
-				validationSummary: { container: ".summary-container" }
-			},
-			formData: {
-				status: "",
-        name: "",
-				category: "",
-				subCategory: "",
-        id_manufacturer: "",
-				id_parent: "",
-        note: "",
-				packagingGroupedBy: "",
-				packagingGroupedByQuantity: ""
-      },
-      layout: "grid",
-        grid: {
-          cols: 2,
-          gutter: 20
-        },
-        items: [
-          {
-            type: "group",
-            label: "Master Information",
-            items: [
-              {
-                field: "name", 
-                label: "Item Name:", 
-                validation: { 
-									message: "Item Name is required.",
-									required: true
-								} 
-              }
-            ]
-          },
-          {
-            type: "group",
-            label: "Shipping Address",
-            layout: "grid",                        
-            items: [
-              { 
-                field: "category", 
-                label: "Category:", 
-                validation: { 
-									message: "Item category is required.",
-									required: true
-								}
-              }
-            ]
-          }
-        ]
-    });
-  });
-</script>
-	
-</body>
+	<head>
+	    <title></title>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <style>html { font-size: 14px; font-family: Helvetica, sans-serif; }</style>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.common-bootstrap.min.css" />
+	    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.bootstrap.min.css" />
+	    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default.mobile.min.css" />
+	    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/jquery.min.js"></script>
+	    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+	</head>
+	<body>
+		<h4>Hello!</h4>
+		
+		<div class="summary-container"></div>
+		
+		<form id="form"></form>
+		
+		<script>
+		  $(document).ready(function () {
+		    $("#form").kendoForm({
+					validatable: {
+						validationSummary: { container: ".summary-container" }
+					},
+					formData: {
+						status: "",
+		        name: "",
+						category: "",
+						subCategory: "",
+		        id_manufacturer: "",
+						id_parent: "",
+		        note: "",
+						packagingGroupedBy: "",
+						packagingGroupedByQuantity: ""
+		      },
+		      layout: "grid",
+		        grid: {
+		          cols: 2,
+		          gutter: 20
+		        },
+		        items: [
+		          {
+		            type: "group",
+		            label: "Master Information",
+		            items: [
+		              {
+		                field: "name", 
+		                label: "Item Name:", 
+		                validation: { 
+											message: "Item name is required",
+											required: true
+										} 
+		              }
+		            ]
+		          },
+		          {
+		            type: "group",
+		            label: "Shipping Address",
+		            layout: "grid",                        
+		            items: [
+		              { 
+		                field: "category", 
+		                label: "Category:", 
+		                validation: { 
+											message: "Item category is required",
+											required: true
+										}
+		              }
+		            ]
+		          }
+		        ]
+		    });
+		  });
+		</script>
+	</body>
 </html>
