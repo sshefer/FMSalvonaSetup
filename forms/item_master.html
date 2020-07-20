@@ -4,10 +4,10 @@
   $(document).ready(function () {
     $("#form").kendoForm({
       formData: {
-				Status: "",
-        Name: "",
-				Category: "",
-				SubCategory: "",
+				status: "",
+        name: "",
+				category: "",
+				subCategory: "",
         id_manufacturer: "",
 				id_parent: "",
         note: "",
@@ -25,8 +25,8 @@
             label: "Master Information",
             items: [
               {
-                field: "FirstName", 
-                label: "First Name:", 
+                field: "name", 
+                label: "Item Name:", 
                 validation: { required: true } 
               },
               { 
