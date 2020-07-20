@@ -35,9 +35,7 @@ FileMaker variables are added starting with @@
 		<script>
 		  $(document).ready(function () {
 		    $("#form").kendoForm({
-					validatable: {
-						validationSummary: { container: ".summary-container" }
-					},
+					validatable: { validationSummary: true },
 					formData: {
 						status: "",
 		        name: "",
@@ -49,34 +47,18 @@ FileMaker variables are added starting with @@
 						packagingGroupedBy: "",
 						packagingGroupedByQuantity: ""
 		      },
-		      layout: "grid",
-		      grid: {
-		        cols: 2,
-		        gutter: 20
-		      },
-		      items: [{
-						type: "group",
-						label: "Master Information",
-						items: [{
+					items: [
+						{
 							field: "name", 
 							label: "Item Name:", 
-							validation: {
-								required: true, message: "Item name is required"
-							} 
-						}]
-					},{
-		        type: "group",
-						label: "Shipping Address",
-						layout: "grid",                        
-						items: [{ 
+							validation: { required: true, message: "Item name is required" } 
+						},
+						{
 							field: "category", 
 							label: "Category:",
-							validation: {
-								message: "Item category is required",
-								required: true
-							}
-						}]
-					}]
+							validation: { message: "Item category is required", required: true }
+						}
+					]
 		    });
 		  });
 		</script>
