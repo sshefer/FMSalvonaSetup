@@ -1,9 +1,14 @@
+<div class="summary-container"></div>
+
 <form id="form"></form>
 
 <script>
   $(document).ready(function () {
     $("#form").kendoForm({
-      formData: {
+			validatable: {
+				validationSummary: { container: ".summary-container" }
+			},
+			formData: {
 				status: "",
         name: "",
 				category: "",
