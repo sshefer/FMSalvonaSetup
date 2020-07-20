@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>html { font-size: 14px; font-family: Helvetica, sans-serif; }</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.common-bootstrap.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default.mobile.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+<div class="summary-container"></div>
+
+<form id="form"></form>
+
+<script>
+  $(document).ready(function () {
+    $("#form").kendoForm({
+			validatable: {
+				validationSummary: { container: ".summary-container" }
+			},
+			formData: {
+				status: "",
+        name: "",
+				category: "",
+				subCategory: "",
+        id_manufacturer: "",
+				id_parent: "",
+        note: "",
+				packagingGroupedBy: "",
+				packagingGroupedByQuantity: ""
+      },
+      layout: "grid",
+        grid: {
+          cols: 2,
+          gutter: 20
+        },
+        items: [
+          {
+            type: "group",
+            label: "Master Information",
+            items: [
+              {
+                field: "name", 
+                label: "Item Name:", 
+                validation: { 
+									required: true,
+									message: "Item Name is required."
+								} 
+              }
+            ]
+          },
+          {
+            type: "group",
+            label: "Shipping Address",
+            layout: "grid",                        
+            items: [
+              { 
+                field: "category", 
+                label: "Category", 
+                validation: { 
+									required: true,
+									message: "Item category is required."
+								}
+              }
+            ]
+          }
+        ]
+    });
+  });
+</script>
+	
+</body>
+</html>
